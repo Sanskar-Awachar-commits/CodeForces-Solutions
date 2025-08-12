@@ -12,13 +12,15 @@ int main() {
         vector<int> a(n);
         for (int i = 0; i < n; i++) cin >> a[i];
         sort(a.begin(), a.end());
+        bool bo = false;
         for (int i = 0; i < n - 1; i++) {
             if (a[i + 1] - a[i] > 1) {
                 cout << "NO" << endl;
-                return;
+                bo = true;
+                break;
             }
         }
-        cout << "YES" << endl;
+        if (!bo) cout << "YES" << endl;
     }
     return 0;
 }
