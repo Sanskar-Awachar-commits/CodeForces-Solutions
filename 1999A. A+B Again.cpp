@@ -11,5 +11,6 @@ int main() {
         int output = (n - a) / 10 + a;
         cout << output << endl;
     }
+    
     return 0;
 }
