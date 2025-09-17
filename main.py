@@ -31,7 +31,17 @@ def getName(argument):
     return contestId + index + ". " + problemName + ".cpp"
     
 def createFile(fileName):
-    file = open(fileName, "w")
+    filterCharacters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890. "
+    fileteredName = ""
+    for char in fileName:
+        isPresent = False
+        for filterChar in filterCharacters:
+            if (char == filterChar):
+                isPresent = True
+                break
+        if (isPresent):
+            fileteredName += char
+    file = open(fileteredName, "w")
     file.write("#include <iostream>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(nullptr);\n    \n    return 0;\n}")
     file.close()
 
